@@ -8,6 +8,7 @@ import RandomQuiz from './pages/RandomQuiz';
 import DailyChallenge from './pages/DailyChallenge';
 import Leaderboard from './pages/Leaderboard';
 import Profile from './pages/Profile';
+import NotFound from './pages/NotFound';
 
 function Placeholder({ title }) {
   return <div className="container text-center">{title} coming soon...</div>;
@@ -70,7 +71,7 @@ export default function App() {
           <Route path="/daily" element={<DailyChallenge />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </div>

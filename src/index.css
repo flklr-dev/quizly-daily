@@ -790,3 +790,39 @@ p {
     display: none !important;
   }
 }
+
+/* NotFound Page Styles */
+.notfound-container {
+  background: linear-gradient(135deg, #f8fafc 60%, #6366f1 100%);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 2.5rem 1.5rem 2rem 1.5rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  position: relative;
+}
+
+.notfound-emoji {
+  filter: drop-shadow(0 4px 12px rgba(99,102,241,0.15));
+}
+
+.notfound-title {
+  text-shadow: 2px 2px 0 #f59e0b, 4px 4px 0 #10b981;
+}
+
+.notfound-desc {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive, var(--font-family);
+}
+
+@media (max-width: 700px) {
+  .notfound-container {
+    max-width: 95vw;
+    padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+  }
+  .notfound-title {
+    font-size: 2rem;
+  }
+  .notfound-emoji {
+    font-size: 4rem;
+  }
+}
