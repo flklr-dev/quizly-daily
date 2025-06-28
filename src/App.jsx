@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
+import AdSense from './components/AdSense';
 import Home from './pages/Home';
 import RandomQuiz from './pages/RandomQuiz';
 import DailyChallenge from './pages/DailyChallenge';
@@ -32,6 +33,21 @@ export default function App() {
   return (
     <div className="app">
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      
+      {/* Left Sidebar Ad */}
+      <AdSense 
+        adSlot="9798030559" 
+        adFormat="auto" 
+        className="sidebar left"
+      />
+      
+      {/* Right Sidebar Ad */}
+      <AdSense 
+        adSlot="9798030559" 
+        adFormat="auto" 
+        className="sidebar right"
+      />
+      
       <main className="page-container">
         <Routes>
           <Route path="/" element={<Home />} />

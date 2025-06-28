@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import AdSense from '../components/AdSense';
 
 function getTodayKey() {
   const d = new Date();
@@ -162,6 +163,13 @@ export default function DailyChallenge() {
           </p>
           <p className="text-muted">Come back tomorrow for a new set of questions! 🌅</p>
         </div>
+        
+        {/* Completion Ad */}
+        <AdSense 
+          adSlot="3232622207" 
+          adFormat="auto" 
+          className="completion"
+        />
       </div>
     );
   }
@@ -204,6 +212,13 @@ export default function DailyChallenge() {
           </p>
           <p className="text-muted">Come back tomorrow for a new challenge! 🌅</p>
         </div>
+        
+        {/* Completion Ad */}
+        <AdSense 
+          adSlot="3232622207" 
+          adFormat="auto" 
+          className="completion"
+        />
       </div>
     );
   }

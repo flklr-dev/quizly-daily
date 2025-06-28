@@ -733,3 +733,54 @@ p {
     padding: var(--space-4);
   }
 }
+
+/* AdSense Styles */
+.ad-container {
+  margin: 20px 0;
+  text-align: center;
+  min-height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ad-container.sidebar {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px;
+  z-index: 100;
+}
+
+.ad-container.sidebar.left {
+  left: 20px;
+}
+
+.ad-container.sidebar.right {
+  right: 20px;
+}
+
+.ad-container.completion {
+  margin: 30px auto;
+  max-width: 728px;
+}
+
+/* Responsive ad adjustments */
+@media (max-width: 1200px) {
+  .ad-container.sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .ad-container.completion {
+    margin: 20px auto;
+  }
+}
+
+/* Hide ads for very small screens */
+@media (max-width: 480px) {
+  .ad-container {
+    display: none;
+  }
+}

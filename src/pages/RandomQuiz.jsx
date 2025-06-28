@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import AdSense from '../components/AdSense';
 
 function decodeHtml(html) {
   const txt = document.createElement('textarea');
@@ -163,6 +164,13 @@ export default function RandomQuiz() {
             🔄 Try Again
           </button>
         </div>
+        
+        {/* Completion Ad */}
+        <AdSense 
+          adSlot="3232622207" 
+          adFormat="auto" 
+          className="completion"
+        />
       </div>
     );
   }
