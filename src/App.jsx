@@ -17,6 +17,7 @@ export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
     return localStorage.getItem('theme') === 'dark';
   });
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 1200);
 
   useEffect(() => {
     if (darkMode) {
@@ -28,25 +29,39 @@ export default function App() {
     }
   }, [darkMode]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 1200);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const toggleDarkMode = () => setDarkMode((d) => !d);
 
   return (
     <div className="app">
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       
-      {/* Left Sidebar Ad */}
-      <AdSense 
-        adSlot="9798030559" 
-        adFormat="auto" 
-        className="sidebar left"
-      />
-      
-      {/* Right Sidebar Ad */}
-      <AdSense 
-        adSlot="9798030559" 
-        adFormat="auto" 
-        className="sidebar right"
-      />
+      {/* Sidebar Ads - Only show on desktop */}
+      {isDesktop && (
+        <>
+          {/* Left Sidebar Ad */}
+          <AdSense 
+            adSlot="9798030559" 
+            adFormat="auto" 
+            className="sidebar left"
+          />
+          
+          {/* Right Sidebar Ad */}
+          <AdSense 
+            adSlot="9798030559" 
+            adFormat="auto" 
+            className="sidebar right"
+          />
+        </>
+      )}
       
       <main className="page-container">
         <Routes>
